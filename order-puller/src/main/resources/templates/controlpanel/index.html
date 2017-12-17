@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/kendoui/kendo.common-material.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/kendoui/kendo.material.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/control-panel.css}"/>
+    <script th:src="@{/order-puller/js/kendoui/jquery.min.js}"></script>
+    <script th:src="@{/order-puller/js/kendoui/kendo.all.min.js}"></script>
+    <script th:src="@{/order-puller/js/kendoui/cultures/kendo.culture.zh-CN.min.js}"></script>
+    <script th:src="@{/order-puller/js/kendoui/messages/kendo.messages.zh-CN.min.js}"></script>
+    <script th:src="@{/order-puller/js/control-panel.js}"></script>
+    <script th:src="@{/order-puller/js/products.js}"></script>
+    <title>控制面板</title>
+    <script>
+        kendo.culture("zh-CN");
+    </script>
+</head>
+<body>
+<div>
+    <div>
+        <label for="id">订单号：</label>
+        <input id="id" name="id" style="width: 200px;" title="订单号"/>
+    </div>
+
+    <br/>
+    <div class="demo-section k-content">
+        <label for="startDate">开始日期：</label>
+        <input id="startDate" name="startDate" title="开始日期" style="width: 200px;"/>
+
+        &emsp;
+        <label for="endDate">结束日期：</label>
+        <input id="endDate" name="endDate" title="结束日期" style="width: 200px;"/>
+    </div>
+
+    <br/>
+    <div>
+        <input type="submit" class="k-button k-primary" value="查询"/>
+    </div>
+
+    <br/>
+    <div>
+        <div id="grid"></div>
+    </div>
+
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#id").kendoAutoComplete({
+            dataTextField: "ProductName",
+            filter: "contains",
+            minLength: 3,
+            dataSource: {
+                type: "odata",
+                serverFiltering: true,
+                transport: {
+                    read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+                }
+            }
+        });
+
+        $("#startDate").kendoDatePicker({
+            start: "date",
+            depth: "date",
+            format: "yyyy-MM-dd"
+        });
+
+        $("#endDate").kendoDatePicker({
+            start: "date",
+            depth: "date",
+            format: "yyyy-MM-dd"
+        });
+    });
+
+    $("#grid").kendoGrid({
+        dataSource: {
+            transport: {
+                read: {
+                    url: "/order-puller/order-messages",
+                    contentType: "application/json",
+                    type: "GET",
+                    dataType: "json"
+                }
+            },
+            schema: {
+                model: {
+                    id: "id",
+                    fields: {
+                        id: {type: "string"},
+                        source: {type: "string"},
+                        message: {type: "string"},
+                        createdDate: {type: "string"},
+                        sentDate: {type: "string"}
+                    }
+                }
+            },
+            // parameterMap: function (options, operation) {
+            //     console.log(JSON.stringify(options));
+            //     if (operation === "read") {
+            //         var parameter = {
+            //             page: options.page,
+            //             pageSize: options.pageSize,
+            //             take: options.take,
+            //             skip: options.skip
+            //         };
+            //         return kendo.stringify(parameter);
+            //     }
+            // },
+            pageSize: 20,
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true
+        },
+        height: 550,
+        scrollable: true,
+        sortable: true,
+        filterable: true,
+        pageable: true,
+        columns: [
+            {field: "id", title: "订单编号", width: "130px"},
+            {field: "source", title: "订单来源", width: "130px"},
+            {field: "message", title: "原始报文"},
+            {field: "createdDate", title: "拉取时间", width: "200px"},
+            {field: "sentDate", title: "发送时间", width: "200px"}
+        ]
+    });
+</script>
+</html>

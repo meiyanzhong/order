@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.topscore.omnichannel.order.GoodsMapper">
+    <resultMap id="GoodsMap" type="com.topscore.omnichannel.order.entity.Goods">
+        <id column="id" jdbcType="VARCHAR" property="number"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+    </resultMap>
+    <select id="findOne" resultMap="GoodsMap">
+        SELECT * FROM goods WHERE number = #{number}
+    </select>
+</mapper>

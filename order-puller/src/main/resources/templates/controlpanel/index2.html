@@ -1,0 +1,78 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/semantic.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/calendar.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/order-puller/css/control-panel.css}"/>
+    <script th:src="@{/order-puller/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/order-puller/js/semantic.min.js}"></script>
+    <script th:src="@{/order-puller/js/calendar.min.js}"></script>
+    <script th:src="@{/order-puller/js/control-panel.js}"></script>
+    <title>控制面板</title>
+</head>
+<body>
+
+<div class="content">
+    <div class="ui calendar" id="startDate">
+        <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Date/Time"/>
+        </div>
+    </div>
+    <br/>
+    <button class="ui primary button">查询</button>
+    <button class="ui button">全部重发</button>
+</div>
+
+<div class="content">
+    <table class="ui celled compact table">
+        <thead>
+        <tr>
+            <th>操作</th>
+            <th>订单号</th>
+            <th>订单来源</th>
+            <th>报文</th>
+            <th>下发时间</th>
+            <th>发送时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="message,messageStat:${messages}">
+            <td style="width: 85px;">
+                <a href="">重发</a>&nbsp;
+                <a href="">删除</a>
+            </td>
+            <td>
+                <div th:text="${message.number}" style="display:inline"></div>
+            </td>
+            <td th:text="${message.source}"></td>
+            <td th:text="${message.message}"></td>
+            <td th:text="${#dates.format(message.createdDate,'yyyy-MM-dd')}"></td>
+            <td th:text="${#dates.format(message.sentDate,'yyyy-MM-dd')}"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="6">
+                <div class="ui right floated pagination menu">
+                    <a class="icon item">
+                        <i class="left chevron icon"></i>
+                    </a>
+                    <a class="active item">1</a>
+                    <a class="item">2</a>
+                    <a class="item">3</a>
+                    <a class="item">...</a>
+                    <a class="item">10</a>
+                    <a class="icon item">
+                        <i class="right chevron icon"></i>
+                    </a>
+                </div>
+            </th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>-->
