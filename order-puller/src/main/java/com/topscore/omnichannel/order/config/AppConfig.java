@@ -20,7 +20,7 @@ public class AppConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.topscore.omnichannel.order.site"))
+                .apis(RequestHandlerSelectors.basePackage("com.topscore.omnichannel.order"))
                 .paths(PathSelectors.any())
                 .build();
     }
