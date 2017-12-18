@@ -4,14 +4,22 @@
 package com.topscore.omnichannel.order.jooq;
 
 
-import com.topscore.omnichannel.order.jooq.tables.*;
+import com.topscore.omnichannel.order.jooq.tables.Goods;
+import com.topscore.omnichannel.order.jooq.tables.Member;
 import com.topscore.omnichannel.order.jooq.tables.Order;
-import com.topscore.omnichannel.order.jooq.tables.records.*;
+import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
+import com.topscore.omnichannel.order.jooq.tables.OrderMessage;
+import com.topscore.omnichannel.order.jooq.tables.records.GoodsRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.MemberRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.OrderGoodsRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.OrderMessageRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.OrderRecord;
+
+import javax.annotation.Generated;
+
 import org.jooq.ForeignKey;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
-
-import javax.annotation.Generated;
 
 
 /**

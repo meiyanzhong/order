@@ -4,8 +4,11 @@
 package com.topscore.omnichannel.order.jooq;
 
 
-import com.topscore.omnichannel.order.jooq.tables.*;
+import com.topscore.omnichannel.order.jooq.tables.Goods;
+import com.topscore.omnichannel.order.jooq.tables.Member;
 import com.topscore.omnichannel.order.jooq.tables.Order;
+import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
+import com.topscore.omnichannel.order.jooq.tables.OrderMessage;
 
 import javax.annotation.Generated;
 

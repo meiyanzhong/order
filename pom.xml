@@ -218,7 +218,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
@@ -232,15 +232,15 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <serverId>docker-hub</serverId>
+                    &lt;!&ndash;<serverId>docker-hub</serverId>&ndash;&gt;
                     <imageName>omni/${project.build.finalName}</imageName>
                     <imageTags>
                         <imageTag>0.0.1</imageTag>
                     </imageTags>
-                    <!--覆盖已存在的标签镜像-->
+                    &lt;!&ndash;覆盖已存在的标签镜像&ndash;&gt;
                     <forceTags>true</forceTags>
-                    <!--不需要使用Dockerfile-->
-                    <!--<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
+                    &lt;!&ndash;不需要使用Dockerfile&ndash;&gt;
+                    &lt;!&ndash;<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>&ndash;&gt;
                     <baseImage>java:8</baseImage>
                     <entryPoint>["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
@@ -251,7 +251,7 @@
                         </resource>
                     </resources>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.jooq</groupId>
@@ -295,7 +295,7 @@
                         </generate>
                         <target>
                             <packageName>com.topscore.omnichannel.order.jooq</packageName>
-                            <directory>src/main/java</directory>
+                            <directory>order-puller/src/main/java</directory>
                         </target>
                         <generate>
                             <pojos>false</pojos>

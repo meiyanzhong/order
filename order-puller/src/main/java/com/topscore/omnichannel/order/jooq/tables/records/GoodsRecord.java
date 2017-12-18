@@ -5,13 +5,14 @@ package com.topscore.omnichannel.order.jooq.tables.records;
 
 
 import com.topscore.omnichannel.order.jooq.tables.Goods;
+
+import javax.annotation.Generated;
+
 import org.jooq.Field;
 import org.jooq.Record1;
 import org.jooq.Record2;
 import org.jooq.Row2;
 import org.jooq.impl.UpdatableRecordImpl;
-
-import javax.annotation.Generated;
 
 
 /**

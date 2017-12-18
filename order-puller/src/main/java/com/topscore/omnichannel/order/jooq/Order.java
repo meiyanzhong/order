@@ -8,14 +8,16 @@ import com.topscore.omnichannel.order.jooq.tables.Goods;
 import com.topscore.omnichannel.order.jooq.tables.Member;
 import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
 import com.topscore.omnichannel.order.jooq.tables.OrderMessage;
-import org.jooq.Catalog;
-import org.jooq.Table;
-import org.jooq.impl.SchemaImpl;
 
-import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.annotation.Generated;
+
+import org.jooq.Catalog;
+import org.jooq.Table;
+import org.jooq.impl.SchemaImpl;
 
 
 /**
