@@ -5,27 +5,5 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="1" author="dengbin">
-        <createTable tableName="order" remarks="订单表">
-            <column name="id" remarks="订单号">
-                <constraints primaryKey="true"/>
-            </column>
-            <column name="type" remarks="订单类型。0-线下，1-天猫，2-淘宝，3-京东，4-唯品会">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <createTable tableName="goods" remarks="商品表">
-            <column name="id" remarks="商品编号"/>
-            <column name="name" remarks="商品名称"/>
-        </createTable>
-        
-        <createTable tableName="order_product" remarks="订单商品表">
-            <column name="order_id" remarks="订单号"/>
-            <column name="goods_id" remarks="商品编号"/>
-            <column name="count" remarks="购买数量"/>
-            <column name="unit_price" remarks="单价"/>
-        </createTable>
-        <addPrimaryKey tableName="order_product" columnNames="order_id,goods_id"/>
-    </changeSet>
+    <include file="classpath:/db/changelog/order.changelog.xml"/>
 </databaseChangeLog>

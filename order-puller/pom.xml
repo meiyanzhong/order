@@ -74,6 +74,40 @@
 		<finalName>${project.artifactId}</finalName>
 
 		<plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <imageName>omni/${project.build.finalName}</imageName>
+                    <imageTags>
+                        <imageTag>0.0.1</imageTag>
+                    </imageTags>
+                    <!--覆盖已存在的标签镜像-->
+                    <forceTags>true</forceTags>
+                    <!--不需要使用Dockerfile-->
+                    <!--<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
+                    <baseImage>java:8</baseImage>
+                    <entryPoint>["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+
 			<plugin>
 				<groupId>org.jooq</groupId>
 				<artifactId>jooq-codegen-maven</artifactId>
