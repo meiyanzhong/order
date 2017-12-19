@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface GoodsMapper {
 
-//    @Select("select * from goods where number = #{number}")
-    Goods findOne(@Param("number") String number);
+//    @Select("select * from goods where id = #{id}")
+    Goods findOne(@Param("id") String id);
 }

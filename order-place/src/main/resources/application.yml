@@ -1,0 +1,56 @@
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  jooq:
+    sql-dialect: mysql
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 1001
+  undertow:
+    io-threads: 4
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+liquibase:
+  enabled: true
+  change-log: classpath:/db/changelog/db.changelog-master.xml
+management:
+  security:
+    enabled: false
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+---
+spring:
+  profiles: dev # 开发环境
+  datasource:
+    url: jdbc:mysql://localhost:3306/order?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    sql-script-encoding: utf-8
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+---
+spring:
+  profiles: stage # 测试环境
+  datasource:
+    url: jdbc:mysql://172.16.35.78:3306/order?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 172.16.35.78
+    username: guest
+    password: guest
+---
+spring:
+  profiles: prod # 生产环境

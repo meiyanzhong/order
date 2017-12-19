@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class Goods {
 
-    private String number;
+    private String id;
     private String name;
 }
