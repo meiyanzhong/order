@@ -1,6 +1,9 @@
 package com.topscore.omnichannel.order.api.place;
 
+import com.topscore.omnichannel.order.data.OrderRepository;
+import com.topscore.omnichannel.order.model.Orders;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,10 +12,12 @@ import java.util.List;
 @RequestMapping("/orders")
 public class PlaceOrderController {
 
-    @GetMapping
-    public String list() {
+    @Autowired
+    private OrderRepository orderRepository;
 
-        return "";
+    @GetMapping
+    public List<Orders> list() {
+        return orderRepository.findAll();
     }
 
     @GetMapping("/{id}")
@@ -30,8 +35,9 @@ public class PlaceOrderController {
         return "";
     }
 
-
-
+    /**
+     * 订单表单。
+     */
     @Data
     public static class OrderForm {
         private String id;
@@ -39,6 +45,9 @@ public class PlaceOrderController {
         private List<GoodsForm> goods;
     }
 
+    /**
+     * 商品表单。
+     */
     @Data
     public static class GoodsForm {
         private String id;

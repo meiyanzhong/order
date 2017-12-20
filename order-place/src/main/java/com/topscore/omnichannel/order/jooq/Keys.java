@@ -55,7 +55,7 @@ public class Keys {
 
     private static class UniqueKeys0 extends AbstractKeys {
         public static final UniqueKey<DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = createUniqueKey(Databasechangeloglock.DATABASECHANGELOGLOCK, "KEY_databasechangeloglock_PRIMARY", Databasechangeloglock.DATABASECHANGELOGLOCK.ID);
-        public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = createUniqueKey(Order.ORDER_, "KEY_order_PRIMARY", Order.ORDER_.ID);
+        public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = createUniqueKey(Order.ORDER, "KEY_order_PRIMARY", Order.ORDER.ID);
         public static final UniqueKey<OrderGoodsRecord> KEY_ORDER_GOODS_PRIMARY = createUniqueKey(OrderGoods.ORDER_GOODS, "KEY_order_goods_PRIMARY", OrderGoods.ORDER_GOODS.ORDER_ID, OrderGoods.ORDER_GOODS.GOODS_ID);
     }
 }

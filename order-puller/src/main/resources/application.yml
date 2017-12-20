@@ -9,7 +9,7 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 server:
-  port: 1001
+  port: 1002
   undertow:
     io-threads: 4
     worker-threads: 20

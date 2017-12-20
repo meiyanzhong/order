@@ -44,7 +44,7 @@ public class Tables {
     /**
      * 订单表
      */
-    public static final Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER_;
+    public static final Order ORDER = com.topscore.omnichannel.order.jooq.tables.Order.ORDER;
 
     /**
      * 订单商品表

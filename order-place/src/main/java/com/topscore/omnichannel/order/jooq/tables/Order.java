@@ -6,18 +6,12 @@ package com.topscore.omnichannel.order.jooq.tables;
 
 import com.topscore.omnichannel.order.jooq.Keys;
 import com.topscore.omnichannel.order.jooq.tables.records.OrderRecord;
-
-import java.util.Arrays;
-import java.util.List;
+import org.jooq.*;
+import org.jooq.impl.TableImpl;
 
 import javax.annotation.Generated;
-
-import org.jooq.Field;
-import org.jooq.Schema;
-import org.jooq.Table;
-import org.jooq.TableField;
-import org.jooq.UniqueKey;
-import org.jooq.impl.TableImpl;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -38,7 +32,7 @@ public class Order extends TableImpl<OrderRecord> {
     /**
      * The reference instance of <code>order.order</code>
      */
-    public static final Order ORDER_ = new Order();
+    public static final Order ORDER = new Order();
 
     /**
      * The class holding records for this type
@@ -69,7 +63,7 @@ public class Order extends TableImpl<OrderRecord> {
      * Create an aliased <code>order.order</code> table reference
      */
     public Order(String alias) {
-        this(alias, ORDER_);
+        this(alias, ORDER);
     }
 
     private Order(String alias, Table<OrderRecord> aliased) {

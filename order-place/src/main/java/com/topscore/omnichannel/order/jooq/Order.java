@@ -8,16 +8,14 @@ import com.topscore.omnichannel.order.jooq.tables.Databasechangelog;
 import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
 import com.topscore.omnichannel.order.jooq.tables.Goods;
 import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.annotation.Generated;
-
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
+
+import javax.annotation.Generated;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -58,7 +56,7 @@ public class Order extends SchemaImpl {
     /**
      * 订单表
      */
-    public final com.topscore.omnichannel.order.jooq.tables.Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER_;
+    public final com.topscore.omnichannel.order.jooq.tables.Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER;
 
     /**
      * 订单商品表
@@ -93,7 +91,7 @@ public class Order extends SchemaImpl {
             Databasechangelog.DATABASECHANGELOG,
             Databasechangeloglock.DATABASECHANGELOGLOCK,
             Goods.GOODS,
-            com.topscore.omnichannel.order.jooq.tables.Order.ORDER_,
+            com.topscore.omnichannel.order.jooq.tables.Order.ORDER,
             OrderGoods.ORDER_GOODS);
     }
 }

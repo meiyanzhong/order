@@ -95,7 +95,7 @@ public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Rec
      */
     @Override
     public Field<String> field1() {
-        return Order.ORDER_.ID;
+        return Order.ORDER.ID;
     }
 
     /**
@@ -103,7 +103,7 @@ public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Rec
      */
     @Override
     public Field<Integer> field2() {
-        return Order.ORDER_.TYPE;
+        return Order.ORDER.TYPE;
     }
 
     /**
@@ -158,14 +158,14 @@ public class OrderRecord extends UpdatableRecordImpl<OrderRecord> implements Rec
      * Create a detached OrderRecord
      */
     public OrderRecord() {
-        super(Order.ORDER_);
+        super(Order.ORDER);
     }
 
     /**
      * Create a detached, initialised OrderRecord
      */
     public OrderRecord(String id, Integer type) {
-        super(Order.ORDER_);
+        super(Order.ORDER);
 
         set(0, id);
         set(1, type);
