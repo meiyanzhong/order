@@ -30,7 +30,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> implements Record4<String, String, Integer, BigDecimal> {
 
-    private static final long serialVersionUID = -1211182726;
+    private static final long serialVersionUID = 321777486;
 
     /**
      * Setter for <code>order.order_goods.order_id</code>. 订单号
@@ -61,16 +61,16 @@ public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> impl
     }
 
     /**
-     * Setter for <code>order.order_goods.quantity</code>. 购买数量
+     * Setter for <code>order.order_goods.quality</code>. 购买数量
      */
-    public void setQuantity(Integer value) {
+    public void setQuality(Integer value) {
         set(2, value);
     }
 
     /**
-     * Getter for <code>order.order_goods.quantity</code>. 购买数量
+     * Getter for <code>order.order_goods.quality</code>. 购买数量
      */
-    public Integer getQuantity() {
+    public Integer getQuality() {
         return (Integer) get(2);
     }
 
@@ -141,7 +141,7 @@ public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> impl
      */
     @Override
     public Field<Integer> field3() {
-        return OrderGoods.ORDER_GOODS.QUANTITY;
+        return OrderGoods.ORDER_GOODS.QUALITY;
     }
 
     /**
@@ -173,7 +173,7 @@ public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> impl
      */
     @Override
     public Integer value3() {
-        return getQuantity();
+        return getQuality();
     }
 
     /**
@@ -207,7 +207,7 @@ public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> impl
      */
     @Override
     public OrderGoodsRecord value3(Integer value) {
-        setQuantity(value);
+        setQuality(value);
         return this;
     }
 
@@ -246,12 +246,12 @@ public class OrderGoodsRecord extends UpdatableRecordImpl<OrderGoodsRecord> impl
     /**
      * Create a detached, initialised OrderGoodsRecord
      */
-    public OrderGoodsRecord(String orderId, String goodsId, Integer quantity, BigDecimal unitPrice) {
+    public OrderGoodsRecord(String orderId, String goodsId, Integer quality, BigDecimal unitPrice) {
         super(OrderGoods.ORDER_GOODS);
 
         set(0, orderId);
         set(1, goodsId);
-        set(2, quantity);
+        set(2, quality);
         set(3, unitPrice);
     }
 }

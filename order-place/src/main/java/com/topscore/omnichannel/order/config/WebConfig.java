@@ -13,7 +13,10 @@ public class WebConfig {
     @Bean
     public EmbeddedServletContainerFactory embeddedServletContainerFactory() {
         UndertowEmbeddedServletContainerFactory factory = new UndertowEmbeddedServletContainerFactory();
-        factory.addBuilderCustomizers(builder -> builder.setServerOption(ENABLE_HTTP2, true));
+        factory.addBuilderCustomizers(builder -> {
+            builder.setServerOption(ENABLE_HTTP2, true);
+            builder.addHttpListener(8080, "0.0.0.0");
+        });
         return factory;
     }
 }

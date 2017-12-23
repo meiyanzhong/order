@@ -7,8 +7,8 @@ package com.topscore.omnichannel.order.jooq;
 import com.topscore.omnichannel.order.jooq.tables.Databasechangelog;
 import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
 import com.topscore.omnichannel.order.jooq.tables.Goods;
-import com.topscore.omnichannel.order.jooq.tables.Order;
 import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
+import com.topscore.omnichannel.order.jooq.tables.Orders;
 
 import javax.annotation.Generated;
 
@@ -44,7 +44,7 @@ public class Tables {
     /**
      * 订单表
      */
-    public static final Order ORDER = com.topscore.omnichannel.order.jooq.tables.Order.ORDER;
+    public static final Orders ORDERS = com.topscore.omnichannel.order.jooq.tables.Orders.ORDERS;
 
     /**
      * 订单商品表

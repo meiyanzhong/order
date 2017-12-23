@@ -35,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OrderGoods extends TableImpl<OrderGoodsRecord> {
 
-    private static final long serialVersionUID = 1740248985;
+    private static final long serialVersionUID = -698786319;
 
     /**
      * The reference instance of <code>order.order_goods</code>
@@ -61,9 +61,9 @@ public class OrderGoods extends TableImpl<OrderGoodsRecord> {
     public final TableField<OrderGoodsRecord, String> GOODS_ID = createField("goods_id", org.jooq.impl.SQLDataType.VARCHAR.length(30).nullable(false), this, "商品编号");
 
     /**
-     * The column <code>order.order_goods.quantity</code>. 购买数量
+     * The column <code>order.order_goods.quality</code>. 购买数量
      */
-    public final TableField<OrderGoodsRecord, Integer> QUANTITY = createField("quantity", org.jooq.impl.SQLDataType.INTEGER, this, "购买数量");
+    public final TableField<OrderGoodsRecord, Integer> QUALITY = createField("quality", org.jooq.impl.SQLDataType.INTEGER, this, "购买数量");
 
     /**
      * The column <code>order.order_goods.unit_price</code>. 单价

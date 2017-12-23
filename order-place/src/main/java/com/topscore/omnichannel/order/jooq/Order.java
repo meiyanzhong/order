@@ -8,14 +8,17 @@ import com.topscore.omnichannel.order.jooq.tables.Databasechangelog;
 import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
 import com.topscore.omnichannel.order.jooq.tables.Goods;
 import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
-import org.jooq.Catalog;
-import org.jooq.Table;
-import org.jooq.impl.SchemaImpl;
+import com.topscore.omnichannel.order.jooq.tables.Orders;
 
-import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.annotation.Generated;
+
+import org.jooq.Catalog;
+import org.jooq.Table;
+import org.jooq.impl.SchemaImpl;
 
 
 /**
@@ -31,7 +34,7 @@ import java.util.List;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Order extends SchemaImpl {
 
-    private static final long serialVersionUID = 1890411167;
+    private static final long serialVersionUID = 1019766383;
 
     /**
      * The reference instance of <code>order</code>
@@ -56,7 +59,7 @@ public class Order extends SchemaImpl {
     /**
      * 订单表
      */
-    public final com.topscore.omnichannel.order.jooq.tables.Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER;
+    public final Orders ORDERS = com.topscore.omnichannel.order.jooq.tables.Orders.ORDERS;
 
     /**
      * 订单商品表
@@ -91,7 +94,7 @@ public class Order extends SchemaImpl {
             Databasechangelog.DATABASECHANGELOG,
             Databasechangeloglock.DATABASECHANGELOGLOCK,
             Goods.GOODS,
-            com.topscore.omnichannel.order.jooq.tables.Order.ORDER,
+            Orders.ORDERS,
             OrderGoods.ORDER_GOODS);
     }
 }

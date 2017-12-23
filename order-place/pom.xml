@@ -90,7 +90,7 @@
 				<configuration>
 					<imageName>omni/${project.build.finalName}</imageName>
 					<imageTags>
-						<imageTag>0.0.1</imageTag>
+						<imageTag>latest</imageTag>
 					</imageTags>
 					<!--覆盖已存在的标签镜像-->
 					<forceTags>true</forceTags>
