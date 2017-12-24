@@ -111,6 +111,7 @@
 			<plugin>
 				<groupId>org.jooq</groupId>
 				<artifactId>jooq-codegen-maven</artifactId>
+                <version>${jooq.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -128,7 +129,7 @@
 				<configuration>
 					<jdbc>
 						<driver>com.mysql.jdbc.Driver</driver>
-						<url>jdbc:mysql://localhost:3306/order?useSSL=false</url>
+						<url>jdbc:mysql://localhost:3306/orderdb?useSSL=false</url>
 						<user>root</user>
 						<password>root</password>
 					</jdbc>
@@ -137,7 +138,7 @@
 							<name>org.jooq.util.mysql.MySQLDatabase</name>
 							<includes>.*</includes>
 							<excludes />
-							<inputSchema>order</inputSchema>
+							<inputSchema>orderdb</inputSchema>
 							<forcedTypes>
 								<forcedType>
 									<name>BOOLEAN</name>

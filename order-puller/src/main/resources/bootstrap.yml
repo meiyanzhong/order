@@ -16,9 +16,10 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:password@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://admin:password@${eureka.instance.ip-address}:8761/eureka/
   instance:
-    hostname: 127.0.0.1
+    hostname: localhost
+    ip-address: 127.0.0.1
     status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html
 ---
 spring:
@@ -26,7 +27,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:password@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://admin:password@${eureka.instance.ip-address}:8761/eureka/
   instance:
-    hostname: 127.0.0.1
+    hostname: localhost
+    ip-address: 127.0.0.1
     status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}/swagger-ui.html

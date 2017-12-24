@@ -28,13 +28,37 @@
         <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
         <thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
         <thymeleaf-extras-java8time.version>3.0.1.RELEASE</thymeleaf-extras-java8time.version>
+        <jinq.version>1.8.22</jinq.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <guava.version>23.3-jre</guava.version>
+        <jsr305.version>3.0.2</jsr305.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
+			<groupId>org.jinq</groupId>
+			<artifactId>jinq-jpa</artifactId>
+			<version>${jinq.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.jinq</groupId>
+            <artifactId>jinq-jooq</artifactId>
+            <version>${jinq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
-			<version>3.0.2</version>
+			<version>${jsr305.version}</version>
 		</dependency>
 		<dependency>
             <groupId>io.springfox</groupId>

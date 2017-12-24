@@ -8,7 +8,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class Orders {
+@Table(name = "`order`")
+public class Order {
 
     /**
      * 订单号。

@@ -4,11 +4,8 @@
 package com.topscore.omnichannel.order.jooq;
 
 
-import com.topscore.omnichannel.order.jooq.tables.Goods;
-import com.topscore.omnichannel.order.jooq.tables.Member;
-import com.topscore.omnichannel.order.jooq.tables.Order;
-import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
-import com.topscore.omnichannel.order.jooq.tables.OrderMessage;
+import com.topscore.omnichannel.order.jooq.tables.Databasechangelog;
+import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
 
 import javax.annotation.Generated;
 
@@ -27,27 +24,12 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
-     * The table <code>order.goods</code>.
+     * The table <code>order.databasechangelog</code>.
      */
-    public static final Goods GOODS = com.topscore.omnichannel.order.jooq.tables.Goods.GOODS;
+    public static final Databasechangelog DATABASECHANGELOG = com.topscore.omnichannel.order.jooq.tables.Databasechangelog.DATABASECHANGELOG;
 
     /**
-     * The table <code>order.member</code>.
+     * The table <code>order.databasechangeloglock</code>.
      */
-    public static final Member MEMBER = com.topscore.omnichannel.order.jooq.tables.Member.MEMBER;
-
-    /**
-     * The table <code>order.order</code>.
-     */
-    public static final Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER_;
-
-    /**
-     * The table <code>order.order_goods</code>.
-     */
-    public static final OrderGoods ORDER_GOODS = com.topscore.omnichannel.order.jooq.tables.OrderGoods.ORDER_GOODS;
-
-    /**
-     * The table <code>order.order_message</code>.
-     */
-    public static final OrderMessage ORDER_MESSAGE = com.topscore.omnichannel.order.jooq.tables.OrderMessage.ORDER_MESSAGE;
+    public static final Databasechangeloglock DATABASECHANGELOGLOCK = com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
 }

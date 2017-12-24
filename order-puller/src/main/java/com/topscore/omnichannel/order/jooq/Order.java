@@ -4,10 +4,8 @@
 package com.topscore.omnichannel.order.jooq;
 
 
-import com.topscore.omnichannel.order.jooq.tables.Goods;
-import com.topscore.omnichannel.order.jooq.tables.Member;
-import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
-import com.topscore.omnichannel.order.jooq.tables.OrderMessage;
+import com.topscore.omnichannel.order.jooq.tables.Databasechangelog;
+import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +31,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Order extends SchemaImpl {
 
-    private static final long serialVersionUID = -1738978858;
+    private static final long serialVersionUID = 526193188;
 
     /**
      * The reference instance of <code>order</code>
@@ -41,29 +39,14 @@ public class Order extends SchemaImpl {
     public static final Order ORDER = new Order();
 
     /**
-     * The table <code>order.goods</code>.
+     * The table <code>order.databasechangelog</code>.
      */
-    public final Goods GOODS = com.topscore.omnichannel.order.jooq.tables.Goods.GOODS;
+    public final Databasechangelog DATABASECHANGELOG = com.topscore.omnichannel.order.jooq.tables.Databasechangelog.DATABASECHANGELOG;
 
     /**
-     * The table <code>order.member</code>.
+     * The table <code>order.databasechangeloglock</code>.
      */
-    public final Member MEMBER = com.topscore.omnichannel.order.jooq.tables.Member.MEMBER;
-
-    /**
-     * The table <code>order.order</code>.
-     */
-    public final com.topscore.omnichannel.order.jooq.tables.Order ORDER_ = com.topscore.omnichannel.order.jooq.tables.Order.ORDER_;
-
-    /**
-     * The table <code>order.order_goods</code>.
-     */
-    public final OrderGoods ORDER_GOODS = com.topscore.omnichannel.order.jooq.tables.OrderGoods.ORDER_GOODS;
-
-    /**
-     * The table <code>order.order_message</code>.
-     */
-    public final OrderMessage ORDER_MESSAGE = com.topscore.omnichannel.order.jooq.tables.OrderMessage.ORDER_MESSAGE;
+    public final Databasechangeloglock DATABASECHANGELOGLOCK = com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
 
     /**
      * No further instances allowed
@@ -90,10 +73,7 @@ public class Order extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            Goods.GOODS,
-            Member.MEMBER,
-            com.topscore.omnichannel.order.jooq.tables.Order.ORDER_,
-            OrderGoods.ORDER_GOODS,
-            OrderMessage.ORDER_MESSAGE);
+            Databasechangelog.DATABASECHANGELOG,
+            Databasechangeloglock.DATABASECHANGELOGLOCK);
     }
 }
