@@ -4,17 +4,25 @@
 package com.topscore.omnichannel.order.jooq;
 
 
-import com.topscore.omnichannel.order.jooq.tables.Databasechangeloglock;
-import com.topscore.omnichannel.order.jooq.tables.records.DatabasechangeloglockRecord;
+import com.topscore.omnichannel.order.jooq.tables.Department;
+import com.topscore.omnichannel.order.jooq.tables.Order;
+import com.topscore.omnichannel.order.jooq.tables.OrderGoods;
+import com.topscore.omnichannel.order.jooq.tables.Person;
+import com.topscore.omnichannel.order.jooq.tables.records.DepartmentRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.OrderGoodsRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.OrderRecord;
+import com.topscore.omnichannel.order.jooq.tables.records.PersonRecord;
 
 import javax.annotation.Generated;
 
+import org.jooq.ForeignKey;
+import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
 
 
 /**
- * A class modelling foreign key relationships between tables of the <code>order</code> 
+ * A class modelling foreign key relationships between tables of the <code>orderdb</code> 
  * schema
  */
 @Generated(
@@ -31,23 +39,43 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<DepartmentRecord, Long> IDENTITY_DEPARTMENT = Identities0.IDENTITY_DEPARTMENT;
+    public static final Identity<PersonRecord, Long> IDENTITY_PERSON = Identities0.IDENTITY_PERSON;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = UniqueKeys0.KEY_DATABASECHANGELOGLOCK_PRIMARY;
+    public static final UniqueKey<DepartmentRecord> KEY_DEPARTMENT_PRIMARY = UniqueKeys0.KEY_DEPARTMENT_PRIMARY;
+    public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = UniqueKeys0.KEY_ORDER_PRIMARY;
+    public static final UniqueKey<OrderGoodsRecord> KEY_ORDER_GOODS_PRIMARY = UniqueKeys0.KEY_ORDER_GOODS_PRIMARY;
+    public static final UniqueKey<PersonRecord> KEY_PERSON_PRIMARY = UniqueKeys0.KEY_PERSON_PRIMARY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final ForeignKey<OrderGoodsRecord, OrderRecord> FK5OTXVRQHYS8TMR8W1YV7X4VJT = ForeignKeys0.FK5OTXVRQHYS8TMR8W1YV7X4VJT;
+    public static final ForeignKey<PersonRecord, DepartmentRecord> FKQQG5CMJGLIVMEPN16LQB1M8UX = ForeignKeys0.FKQQG5CMJGLIVMEPN16LQB1M8UX;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
+    private static class Identities0 extends AbstractKeys {
+        public static Identity<DepartmentRecord, Long> IDENTITY_DEPARTMENT = createIdentity(Department.DEPARTMENT, Department.DEPARTMENT.ID);
+        public static Identity<PersonRecord, Long> IDENTITY_PERSON = createIdentity(Person.PERSON, Person.PERSON.ID);
+    }
+
     private static class UniqueKeys0 extends AbstractKeys {
-        public static final UniqueKey<DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = createUniqueKey(Databasechangeloglock.DATABASECHANGELOGLOCK, "KEY_databasechangeloglock_PRIMARY", Databasechangeloglock.DATABASECHANGELOGLOCK.ID);
+        public static final UniqueKey<DepartmentRecord> KEY_DEPARTMENT_PRIMARY = createUniqueKey(Department.DEPARTMENT, "KEY_department_PRIMARY", Department.DEPARTMENT.ID);
+        public static final UniqueKey<OrderRecord> KEY_ORDER_PRIMARY = createUniqueKey(Order.ORDER, "KEY_order_PRIMARY", Order.ORDER.ID);
+        public static final UniqueKey<OrderGoodsRecord> KEY_ORDER_GOODS_PRIMARY = createUniqueKey(OrderGoods.ORDER_GOODS, "KEY_order_goods_PRIMARY", OrderGoods.ORDER_GOODS.GOODS_ID);
+        public static final UniqueKey<PersonRecord> KEY_PERSON_PRIMARY = createUniqueKey(Person.PERSON, "KEY_person_PRIMARY", Person.PERSON.ID);
+    }
+
+    private static class ForeignKeys0 extends AbstractKeys {
+        public static final ForeignKey<OrderGoodsRecord, OrderRecord> FK5OTXVRQHYS8TMR8W1YV7X4VJT = createForeignKey(com.topscore.omnichannel.order.jooq.Keys.KEY_ORDER_PRIMARY, OrderGoods.ORDER_GOODS, "FK5otxvrqhys8tmr8w1yv7x4vjt", OrderGoods.ORDER_GOODS.ORDER_ID);
+        public static final ForeignKey<PersonRecord, DepartmentRecord> FKQQG5CMJGLIVMEPN16LQB1M8UX = createForeignKey(com.topscore.omnichannel.order.jooq.Keys.KEY_DEPARTMENT_PRIMARY, Person.PERSON, "FKqqg5cmjglivmepn16lqb1m8ux", Person.PERSON.DEPARTMENT_ID);
     }
 }

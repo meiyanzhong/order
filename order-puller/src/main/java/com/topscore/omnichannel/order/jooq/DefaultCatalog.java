@@ -27,7 +27,7 @@ import org.jooq.impl.CatalogImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DefaultCatalog extends CatalogImpl {
 
-    private static final long serialVersionUID = 272460932;
+    private static final long serialVersionUID = -398060274;
 
     /**
      * The reference instance of <code></code>
@@ -35,9 +35,9 @@ public class DefaultCatalog extends CatalogImpl {
     public static final DefaultCatalog DEFAULT_CATALOG = new DefaultCatalog();
 
     /**
-     * The schema <code>order</code>.
+     * The schema <code>orderdb</code>.
      */
-    public final Order ORDER = com.topscore.omnichannel.order.jooq.Order.ORDER;
+    public final Orderdb ORDERDB = com.topscore.omnichannel.order.jooq.Orderdb.ORDERDB;
 
     /**
      * No further instances allowed
@@ -55,6 +55,6 @@ public class DefaultCatalog extends CatalogImpl {
 
     private final List<Schema> getSchemas0() {
         return Arrays.<Schema>asList(
-            Order.ORDER);
+            Orderdb.ORDERDB);
     }
 }
