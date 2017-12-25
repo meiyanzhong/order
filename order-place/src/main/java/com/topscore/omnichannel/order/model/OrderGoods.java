@@ -14,10 +14,13 @@ public class OrderGoods {
     @Id
     @Column(length = 30)
     private String goodsId;
+
     @Column(length = 3)
     private int quality;
+
     @Column(precision = 10, scale = 5)
     private BigDecimal unitPrice;
+
     @ManyToOne
     private Order order;
 }

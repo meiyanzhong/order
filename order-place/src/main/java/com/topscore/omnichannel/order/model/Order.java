@@ -23,6 +23,9 @@ public class Order {
     @Convert(converter = Type.Converter.class)
     private Type type;
 
+//    @OneToMany
+//    private Collection<OrderGoods> goods;
+
     @AllArgsConstructor
     public enum Type {
         STORE(0, "门店"),

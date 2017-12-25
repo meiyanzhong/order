@@ -1,10 +1,12 @@
 package com.topscore.omnichannel.order.api.place;
 
 import com.topscore.omnichannel.order.data.OrderRepository;
+import com.topscore.omnichannel.order.jooq.tables.records.DepartmentRecord;
 import com.topscore.omnichannel.order.jooq.tables.records.PersonRecord;
 import com.topscore.omnichannel.order.model.Department;
-import com.topscore.omnichannel.order.model.Order;
 import com.topscore.omnichannel.order.model.Person;
+import com.topscore.omnichannel.order.model.Phone;
+import com.topscore.omnichannel.order.model.Professor;
 import lombok.Data;
 import org.jinq.jooq.JinqJooqContext;
 import org.jinq.jpa.JinqJPAStreamProvider;
@@ -44,13 +46,30 @@ public class PlaceOrderController {
     @Autowired
     private DSLContext create;
 
+    @Transactional
     @GetMapping
-    public List<Order> list() {
-        streams.streamAll(em, Order.class).forEach(o -> System.out.println(o.getId() + " -- " + o.getType()));
-        List<Order> list = streams.streamAll(em, Order.class).toList();
-        System.out.println(list);
-        return list;
+    public Object list() {
+//        streams.streamAll(em, Order.class).forEach(o -> System.out.println(o.getId() + " -- " + o.getType()));
+//        List<Order> list = streams.streamAll(em, Order.class).toList();
+//        System.out.println(list);
+//        return list;
 //        return orderRepository.findAll();
+
+
+        Professor emp = new Professor();
+        emp.setName("name");
+        emp.setSalary(12345);
+
+
+        Phone p = new Phone();
+        p.setNumber("1234509876");;
+
+        emp.addPhone(p);
+        em.persist(p);
+        em.persist(emp);
+
+        System.out.println(emp);
+        return emp;
     }
 
     @Transactional
